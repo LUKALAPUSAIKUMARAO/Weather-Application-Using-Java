@@ -1,16 +1,16 @@
+
 # WeatherAppProject
 
 ## Overview
 
-The **WeatherAppProject** is a Java-based application that provides weather information, including the current weather and a multi-day forecast. It retrieves data from the OpenWeather API and allows users to view temperature, humidity, wind speed, and weather descriptions. The application also includes user preferences for units (metric or imperial) and enables notifications for high and low temperature alerts.
+The **WeatherAppProject** is a Java-based application that provides weather information, including the current weather and a multi-day forecast. It retrieves data from the OpenWeather API and allows users to view temperature, humidity, wind speed, and weather descriptions. The application features a graphical user interface (GUI) implemented with Swing, allowing for an intuitive and user-friendly experience.
 
 ### Key Features
 
 - **Current Weather and Forecast**: Fetches real-time weather data and forecasts for a specified number of days.
 - **Unit Preferences**: Allows users to switch between metric (°C, m/s) and imperial (°F, mph) units.
-- **Notifications**: Provides alerts for high and low temperatures based on user-selected units.
+- **Notifications**: Provides alerts for high and low temperatures based on user-selected thresholds.
 - **Persistence**: Saves user preferences (units and notifications) in a `userPreferences.properties` file, so they persist across sessions.
-
 
 ## Prerequisites
 
@@ -39,32 +39,32 @@ This command compiles all `.java` files in the `src` folder and places the gener
 
 ### Step 2: Run the Application
 
-After compilation, you can run the `WeatherApp` class from the `bin` directory.
+After compilation, you can run the `WeatherSwingApp` class from the `bin` directory, which serves as the entry point.
 
 #### On Windows
 
 ```cmd
-java -cp "bin;lib\gson-2.11.0.jar" WeatherApp
+java -cp "bin;lib\gson-2.11.0.jar" WeatherSwingApp
 ```
 
 #### On Linux/macOS
 
 ```bash
-java -cp "bin:lib/gson-2.11.0.jar" WeatherApp
+java -cp "bin:lib/gson-2.11.0.jar" WeatherSwingApp
 ```
 
-This command launches the application, and you’ll be able to interact with the weather features and set preferences.
+This command launches the application with a graphical interface.
 
 ### Usage
 
-1. **Current Weather**: Enter the city name to view current weather details.
-2. **Weather Forecast**: Specify the city and number of days for forecast data.
-3. **Preferences**: Update unit preferences (metric or imperial) and enable/disable notifications for high/low temperature alerts.
+1. **Current Weather**: Use the GUI to enter the city name and view current weather details.
+2. **Weather Forecast**: Specify the city and number of days for forecast data through the interface.
+3. **Preferences**: Update unit preferences (metric or imperial) and enable/disable notifications for high/low temperature alerts via the settings menu.
 
 ## Notes
 
 - The `userPreferences.properties` file in the `resources` folder saves the user’s preferences for units and notifications.
-- Make sure to set your API key in the `WeatherAPIManager` class if you replace the code or API credentials.
+- Ensure to set your API key in the `WeatherAPIManager` class if you replace the code or API credentials.
 
 ## Troubleshooting
 

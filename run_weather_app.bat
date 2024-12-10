@@ -1,24 +1,27 @@
 @echo off
-REM Set paths for source, library, and resources
-set SRC=src
-set LIB=lib\gson-2.11.0.jar
-set BIN=bin
 
-REM Create bin folder if it doesn't exist
-if not exist %BIN% (
-    mkdir %BIN%
-)
+:: Set paths for the project
+set SRC_DIR=src
+set BIN_DIR=bin
+set LIB_DIR=lib
+set LIB_JARS=%LIB_DIR%\gson-2.11.0.jar
 
-REM Compile the Java files
+:: Compile the Java files
 echo Compiling Java files...
-javac -cp "%LIB%" -d %BIN% %SRC%\*.java
+javac -cp "%LIB_JARS%" -d %BIN_DIR% %SRC_DIR%\*.java
 if %errorlevel% neq 0 (
     echo Compilation failed.
     pause
     exit /b
 )
 
-REM Run the application
-echo Running WeatherApp...
-java -cp "%BIN%;%LIB%" WeatherApp
+:: Run the application
+echo Running Weather Application...
+java -cp "%BIN_DIR%;%LIB_JARS%" WeatherSwingApp
+if %errorlevel% neq 0 (
+    echo Application encountered an error.
+    pause
+    exit /b
+)
+
 pause

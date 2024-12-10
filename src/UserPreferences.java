@@ -8,7 +8,6 @@ public class UserPreferences {
     private boolean notificationsEnabled = true;
     private static final String PREFERENCES_FILE = "resources/userPreferences.properties";
 
-
     public UserPreferences() {
         loadPreferences();
     }
@@ -53,7 +52,6 @@ public class UserPreferences {
             preferredUnits = properties.getProperty("preferredUnits", "metric");
             notificationsEnabled = Boolean.parseBoolean(properties.getProperty("notificationsEnabled", "true"));
         } catch (IOException e) {
-            // If the file doesn't exist or can't be read, defaults will be used
             System.out.println("Preferences file not found. Using default preferences.");
         }
     }
