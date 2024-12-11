@@ -30,7 +30,6 @@ public class UserPreferences {
         savePreferences();
     }
 
-    // Save preferences to a file
     private void savePreferences() {
         Properties properties = new Properties();
         properties.setProperty("preferredUnits", preferredUnits);
@@ -43,7 +42,6 @@ public class UserPreferences {
         }
     }
 
-    // Load preferences from a file
     private void loadPreferences() {
         Properties properties = new Properties();
 
