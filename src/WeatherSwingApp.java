@@ -64,7 +64,6 @@ public class WeatherSwingApp {
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 try {
-                    // Ensure correct image path
                     File imageFile = new File("resources/home_background.jpg");
                     if (imageFile.exists()) {
                         ImageIcon background = new ImageIcon(imageFile.getAbsolutePath());
