@@ -22,7 +22,6 @@ public class WeatherApp {
         return result.toString();
     }
 
-    // Add this method to expose UserPreferences
     public UserPreferences getUserPreferences() {
         return userPreferences;
     }
