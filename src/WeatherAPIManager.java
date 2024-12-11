@@ -11,7 +11,6 @@ public class WeatherAPIManager {
     private String baseURL = "https://api.openweathermap.org/data/2.5/";
     private UserPreferences userPreferences;
 
-    // Constructor that accepts UserPreferences
     public WeatherAPIManager(UserPreferences userPreferences) {
         this.userPreferences = userPreferences;
     }
@@ -27,7 +26,6 @@ public class WeatherAPIManager {
     }
 
     private String fetchWeatherData(Location location, String endpointType) {
-        // Retrieve the preferred units from UserPreferences
         String units = userPreferences.getPreferredUnits(); // "metric" or "imperial"
         String endpoint = baseURL + endpointType + "?q=" + location.getCity() + "&appid=" + apiKey + "&units=" + units;
         StringBuilder inline = new StringBuilder();
@@ -54,7 +52,7 @@ public class WeatherAPIManager {
         double windSpeed = jsonObj.getAsJsonObject("wind").get("speed").getAsDouble();
         String description = jsonObj.getAsJsonArray("weather").get(0).getAsJsonObject().get("description").getAsString();
 
-        // Pass userPreferences to WeatherData
+        // Passing userPreferences to WeatherData
         return new WeatherData(temp, humidity, windSpeed, description, "Current", userPreferences);
     }
 
@@ -70,7 +68,7 @@ public class WeatherAPIManager {
             double windSpeed = dayData.getAsJsonObject("wind").get("speed").getAsDouble();
             String description = dayData.getAsJsonArray("weather").get(0).getAsJsonObject().get("description").getAsString();
 
-            // Pass userPreferences to WeatherData
+            // Passing userPreferences to WeatherData
             forecastData[i] = new WeatherData(temp, humidity, windSpeed, description, "Forecast Day " + (i + 1), userPreferences);
         }
 
